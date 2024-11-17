@@ -1,54 +1,24 @@
-import time
 
-print("Quel est la capital de la France ?")
-print("a) Marseille")
-print("b) Nice")
-print("c) Paris")
-print("d) Nantes")
 
-answer = input("Ta réponse : ")
-if answer == "c":
-    print("Bonne réponse !")
-    time.sleep(1)
-else :
-    print("Mauvaises réponse !")
-    time.sleep(1)
+def ask_question(question, ans1, ans2, ans3, ans4, correct_answer):
+    global score
+    print(question)
+    print("a-",ans1)
+    print("b-",ans2)
+    print("c-",ans3)
+    print("d-",ans4)
+    answer = input("T'as réponse : ")
+    if answer == correct_answer:
+        print("Bonne réponse, félicitations !")
+        score += 1
+    else:
+        print(f"Mauvaise réponse, la bonne réponse était {correct_answer} !")
 
-print("+++++++******+++++++++")
-print("Quel est la capital du Mali?")
-print("a) Bamako")
-print("b) Kidal")
-print("c) Tombouctou")
-print("d) Segou")
-answer = input("Ta réponse : ")
-if answer == "a":
-    print("Bonne réponse !")
-    time.sleep(1)
-else :
-    print("Mauvaises réponse !")
-    time.sleep(1)
 
-print("+++++++******+++++++++")
-print("Quel est la capital du Japon?")
-print("a) Bourem")
-print("b) Lagos")
-print("c) Sebenikoro")
-print("d) Tokyo")
-answer = input("Ta réponse : ")
-if answer == "d":
-    print("Bonne réponse !")
-    time.sleep(1)
-else :
-    print("Mauvaises réponse !")
-    time.sleep(1)
-print("+++++++******+++++++++")
-print("Quel est la capital de l'Italie?")
-print("a) Milan")
-print("b) Rome")
-print("c) Naples")
-print("d) Florence")
-answer = input("Ta réponse : ")
-if answer == "b":
-    print("Bonne réponse !")
-else :
-    print("Mauvaises réponse !")
+score = 0
+ask_question("Quel est la capital du Mali?","Bamako", "Kidal", "Tombouctou", "Tombouctou", "a")
+ask_question("Quel est la capital de l'Italie?","Milan", "Naples", "Rome", "Florence", "c")
+ask_question("Quel est la capital du Japon?","Nagoya", "Kyoto ", "Osaka", "Tokyo", "d")
+ask_question("Quel est la capital du Cameroun?","Douala", "Yaoundé", "Garoua", "Bamenda", "b")
+
+print(f"Ton score est {score}")
